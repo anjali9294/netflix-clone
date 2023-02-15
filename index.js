@@ -4,6 +4,8 @@ const dotenv = require("dotenv");
 
 //   routes import
 const authRoute = require("./routes/auth");
+const userRoute = require("./routes/users");
+
 const app = express();
 dotenv.config();
 // connecting database
@@ -20,6 +22,7 @@ mongoose
 app.use(express.json());
 //rouets
 app.use("/api/auth", authRoute);
+app.use("/api/users", userRoute);
 
 app.listen(4000, () => {
   console.log("server is running");
